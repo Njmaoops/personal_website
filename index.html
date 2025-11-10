@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>个人网站 · 极简风格</title>
+	<meta name="description" content="极简风格个人网站，Three.js 背景，单页滚动布局，黑白配色。" />
+	<link rel="preload" href="./assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/components/navigation.css" />
+	<link rel="stylesheet" href="./css/components/sections.css" />
+	<link rel="stylesheet" href="./css/components/animations.css" />
+</head>
+<body>
+	<!-- Three.js 背景画布 -->
+	<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+	<!-- 顶部导航 -->
+	<header class="nav" role="navigation" aria-label="主导航">
+		<a class="nav__brand" href="#hero" aria-label="回到顶部" tabindex="0">Portfolio</a>
+		<nav class="nav__links" aria-label="页面分区">
+			<a href="#hero" class="nav__link is-active" data-section="hero" tabindex="0">首页</a>
+			<a href="#about" class="nav__link" data-section="about" tabindex="0">关于</a>
+			<a href="#projects" class="nav__link" data-section="projects" tabindex="0">项目</a>
+			<a href="#contact" class="nav__link" data-section="contact" tabindex="0">联系</a>
+		</nav>
+	</header>
+
+	<!-- 主内容：单页分区 -->
+	<main id="main" class="main" role="main">
+		<section id="hero" class="section section--hero observe">
+			<div class="container">
+				<h1 class="title">你好，我是 <span class="title__accent">Your Name</span></h1>
+				<p class="subtitle">前端开发 / 极简设计 / Three.js 视觉表现</p>
+			</div>
+		</section>
+
+		<section id="about" class="section observe">
+			<div class="container">
+				<h2 class="section__title">关于我</h2>
+				<p class="section__text">
+					热爱简洁设计与可读性代码，擅长构建高质量前端体验。关注用户体验与可维护性。
+				</p>
+			</div>
+		</section>
+
+		<section id="projects" class="section observe">
+			<div class="container">
+				<h2 class="section__title">项目</h2>
+				<div class="grid">
+					<a class="card" href="javascript:void(0)" aria-label="项目 A" tabindex="0">
+						<div class="card__body">
+							<h3 class="card__title">项目 A</h3>
+							<p class="card__desc">简述你的亮点项目，强调作用与价值。</p>
+						</div>
+					</a>
+					<a class="card" href="javascript:void(0)" aria-label="项目 B" tabindex="0">
+						<div class="card__body">
+							<h3 class="card__title">项目 B</h3>
+							<p class="card__desc">简述你的亮点项目，强调作用与价值。</p>
+						</div>
+					</a>
+					<a class="card" href="javascript:void(0)" aria-label="项目 C" tabindex="0">
+						<div class="card__body">
+							<h3 class="card__title">项目 C</h3>
+							<p class="card__desc">简述你的亮点项目，强调作用与价值。</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="section observe">
+			<div class="container">
+				<h2 class="section__title">联系</h2>
+				<p class="section__text">邮箱：you@example.com</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer" role="contentinfo">
+		<div class="container footer__inner">
+			<span>© <span id="year"></span> Your Name</span>
+			<a href="#hero" class="backtop" aria-label="回到顶部" tabindex="0">↑ 返回顶部</a>
+		</div>
+	</footer>
+
+	<!-- Three.js CDN 与脚本 -->
+	<script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+	<script src="./config/constants.js"></script>
+	<script src="./config/settings.js"></script>
+	<script src="./js/utils/responsive.js"></script>
+	<script src="./js/utils/animations.js"></script>
+	<script src="./js/three-scene.js"></script>
+	<script src="./js/scroll-handler.js"></script>
+	<script src="./js/main.js"></script>
+</body>
+</html>
+
+
