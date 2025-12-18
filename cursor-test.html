@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光标测试页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #0e0e0e;
+            color: #f5f5f5;
+            font-family: system-ui, -apple-system, sans-serif;
+            cursor: none;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+
+        .cursor__default {
+            background-image: url('./image/cursor/pointer-arrow.png?v=2');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .cursor__hover {
+            background-image: url('./image/cursor/pointer-hand.png?v=2');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .cursor__active {
+            background-image: url('./image/cursor/pointer-active.png?v=2');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+
+        .test-area {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .test-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            background: #fff;
+            color: #111;
+            border: none;
+            border-radius: 6px;
+            cursor: none;
+        }
+
+        .test-link {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .info {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cursor" class="cursor cursor__default"></div>
+
+    <div class="test-area">
+        <h1>🖱️ 光标测试页面</h1>
+
+        <p>在这个页面上测试三种光标状态：</p>
+
+        <div style="margin: 30px 0;">
+            <button class="test-button">测试按钮 1</button>
+            <button class="test-button">测试按钮 2</button>
+            <a href="#" class="test-link">测试链接</a>
+        </div>
+
+        <div class="info">
+            <h3>光标状态说明：</h3>
+            <ul>
+                <li><strong>正常状态</strong>：在空白区域移动鼠标 → 显示箭头光标</li>
+                <li><strong>悬停状态</strong>：鼠标移到按钮或链接上 → 显示手形光标</li>
+                <li><strong>点击状态</strong>：按下鼠标 → 显示点击光标，松开后恢复悬停状态</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        let isHovering = false;
+        let isMouseDown = false;
+
+        // 更新光标位置
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // 悬停检测
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.matches('button, a, .test-button, .test-link')) {
+                isHovering = true;
+                updateCursor();
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.matches('button, a, .test-button, .test-link')) {
+                isHovering = false;
+                updateCursor();
+            }
+        });
+
+        // 点击检测
+        document.addEventListener('mousedown', () => {
+            isMouseDown = true;
+            updateCursor();
+        });
+
+        document.addEventListener('mouseup', () => {
+            isMouseDown = false;
+            updateCursor();
+        });
+
+        function updateCursor() {
+            cursor.classList.remove('cursor__default', 'cursor__hover', 'cursor__active');
+
+            if (isMouseDown) {
+                cursor.classList.add('cursor__active');
+            } else if (isHovering) {
+                cursor.classList.add('cursor__hover');
+            } else {
+                cursor.classList.add('cursor__default');
+            }
+        }
+    </script>
+</body>
+
+</html>

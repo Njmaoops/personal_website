@@ -1,0 +1,50 @@
+/* 隐藏系统光标 */
+body {
+    cursor: none;
+}
+
+/* 为所有交互元素也隐藏系统光标 */
+a,
+button,
+input,
+textarea,
+select {
+    cursor: none;
+}
+
+/* 自定义光标样式 */
+.cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.cursor__default {
+    background-image: url('../../image/cursor/pointer-arrow.png?v=2');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cursor__hover {
+    background-image: url('../../image/cursor/pointer-hand.png?v=2');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cursor__active {
+    background-image: url('../../image/cursor/pointer-active.png?v=2');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.cursor--hidden {
+    opacity: 0;
+}
