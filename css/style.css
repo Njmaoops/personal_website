@@ -174,28 +174,40 @@ h3 {
 /* === 多页面扩展样式 === */
 
 /* 通用组件 */
+/* --- Universal Button (Apple Style) --- */
 .btn {
-	display: inline-block;
-	padding: 12px 28px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 32px;
+	border-radius: 999px;
+	/* Pill shape */
+	background: rgba(255, 255, 255, 0.1);
+	/* Subtle glass */
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
 	border: 1px solid rgba(255, 255, 255, 0.2);
-	border-radius: 4px;
-	background: rgba(255, 255, 255, 0.03);
-	color: var(--fg);
-	font-size: 14px;
-	transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(12px);
+	transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	/* Smooth spring-like */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	letter-spacing: 0.5px;
 	cursor: none;
-	/* 确保使用自定义光标 */
-	margin-top: 24px;
-	text-decoration: none;
 }
 
 .btn:hover {
-	background: var(--fg);
-	color: var(--bg);
-	border-color: var(--fg);
-	transform: translateY(-2px);
+	background: rgba(255, 255, 255, 0.25);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn--small {
+	padding: 10px 24px;
+	font-size: 14px;
+	gap: 8px;
+	background: rgba(255, 255, 255, 0.08);
 }
 
 /* 页面标题区 */

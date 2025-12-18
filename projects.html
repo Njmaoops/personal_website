@@ -19,8 +19,8 @@
         <nav class="nav__links">
             <a href="index.html" class="nav__link">首页</a>
             <a href="about.html" class="nav__link">关于</a>
-            <a href="projects.html" class="nav__link is-active">项目</a>
             <a href="resume.html" class="nav__link">经历</a>
+            <a href="projects.html" class="nav__link is-active">项目</a>
             <a href="blog.html" class="nav__link">博客</a>
         </nav>
     </header>
@@ -31,46 +31,37 @@
             <p class="page-desc fade-in-up" style="animation-delay: 0.1s">精选设计与开发案例，展示从概念到落地的全过程。</p>
         </div>
 
-        <div class="container">
-            <div class="blog-grid fade-in-up" style="animation-delay: 0.2s">
-                <!-- Project 1 -->
-                <a href="javascript:void(0)" class="blog-card glass-card">
-                    <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #202020;">[Project 1]</div>
-                    </div>
-                    <div class="blog-card__body">
-                        <h3 class="blog-card__title">E-Commerce Dashboard</h3>
-                        <p class="blog-card__desc">基于 React 与 D3.js 的数据可视化仪表盘，帮助商家实时分析销售数据与用户行为。</p>
-                    </div>
-                </a>
+        <div class="container layout-dual fade-in-up" style="animation-delay: 0.2s">
+            <!-- Project 1 -->
+            <a href="project-1.html" class="dual-card glass-card"
+                style="text-decoration: none; color: inherit; height: 500px; cursor: none;">
+                <div class="dual-card__img" style="height: 75%; overflow: hidden;">
+                    <img src="./image/p1_poster.jpg" alt="AIGC 推广海报"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;">
+                </div>
+                <div class="dual-card__body">
+                    <h3 class="dual-card__title">AIGC 商业推广海报</h3>
+                    <p style="color: #888; font-size: 14px;">点击查看完整长图</p>
+                </div>
+            </a>
 
-                <!-- Project 2 -->
-                <a href="javascript:void(0)" class="blog-card glass-card">
-                    <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #252525;">[Project 2]</div>
-                    </div>
-                    <div class="blog-card__body">
-                        <h3 class="blog-card__title">Travel App Interface</h3>
-                        <p class="blog-card__desc">极简风格的旅游预订应用 UI Kit，专注于移动端交互体验与流畅的动画过渡。</p>
-                    </div>
-                </a>
-
-                <!-- Project 3 -->
-                <a href="javascript:void(0)" class="blog-card glass-card">
-                    <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #2a2a2a;">[Project 3]</div>
-                    </div>
-                    <div class="blog-card__body">
-                        <h3 class="blog-card__title">3D Portfolio Template</h3>
-                        <p class="blog-card__desc">利用 Three.js 构建的沉浸式个人作品集模板，支持自定义模型加载与光照调节。</p>
-                    </div>
-                </a>
-            </div>
+            <!-- Project 2 -->
+            <a href="project-2.html" class="dual-card glass-card"
+                style="text-decoration: none; color: inherit; height: 500px; cursor: none;">
+                <div class="dual-card__img" style="height: 75%; overflow: hidden;">
+                    <img src="./image/p2_ui.jpg" alt="饿了么 UI 设计"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;">
+                </div>
+                <div class="dual-card__body">
+                    <h3 class="dual-card__title">饿了么商家端 UI 设计</h3>
+                    <p style="color: #888; font-size: 14px;">点击查看完整长图</p>
+                </div>
+            </a>
         </div>
     </main>
 
     <footer class="footer">
-        <div class="container footer__inner"><span>© <span id="year"></span> Your Name</span></div>
+        <div class="container footer__inner"><span>© <span id="year"></span> 猫极南</span></div>
     </footer>
 
     <script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>

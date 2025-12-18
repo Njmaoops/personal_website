@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>饿了么商家端 UI - 项目详情</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/components/navigation.css" />
+    <link rel="stylesheet" href="./css/components/cursor.css" />
+</head>
+
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="nav">
+        <a class="nav__brand" href="index.html">Portfolio</a>
+        <nav class="nav__links">
+            <a href="index.html" class="nav__link">首页</a>
+            <a href="about.html" class="nav__link">关于</a>
+            <a href="resume.html" class="nav__link">经历</a>
+            <a href="projects.html" class="nav__link is-active">项目</a>
+            <a href="blog.html" class="nav__link">博客</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container page-header">
+            <a href="projects.html" class="btn" style="margin-bottom: 24px;">← 返回项目列表</a>
+            <h1 class="page-title fade-in-up">饿了么商家端 UI 设计</h1>
+            <p class="page-desc fade-in-up" style="animation-delay: 0.1s">针对本地生活服务场景的移动端界面重构设计。</p>
+        </div>
+
+        <div class="container fade-in-up" style="animation-delay: 0.2s; padding-bottom: 80px;">
+            <div class="glass-card" style="padding: 20px;">
+                <img src="./image/p2_ui.jpg" alt="饿了么 UI 设计长图"
+                    style="width: 100%; height: auto; display: block; border-radius: 8px;">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner"><span>© <span id="year"></span> 猫极南</span></div>
+    </footer>
+
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+    <script src="./config/constants.js"></script>
+    <script src="./config/settings.js"></script>
+    <script src="./js/utils/cursor.js"></script>
+    <script src="./js/utils/responsive.js"></script>
+    <script src="./js/utils/animations.js"></script>
+    <script src="./js/three-scene.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
