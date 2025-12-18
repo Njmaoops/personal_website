@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>博客 · Personal Website</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/components/navigation.css" />
+    <link rel="stylesheet" href="./css/components/animations.css" />
+    <link rel="stylesheet" href="./css/components/cursor.css" />
+</head>
+
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="nav">
+        <a class="nav__brand" href="index.html">Portfolio</a>
+        <nav class="nav__links">
+            <a href="index.html" class="nav__link">首页</a>
+            <a href="about.html" class="nav__link">关于</a>
+            <a href="projects.html" class="nav__link">项目</a>
+            <a href="resume.html" class="nav__link">经历</a>
+            <a href="blog.html" class="nav__link is-active">博客</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container page-header">
+            <h1 class="page-title fade-in-up">Insight</h1>
+            <p class="page-desc fade-in-up" style="animation-delay: 0.1s">思考、教程与技术笔记。</p>
+        </div>
+
+        <div class="container">
+            <div class="blog-grid fade-in-up" style="animation-delay: 0.2s">
+                <!-- Article 1 -->
+                <article class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #222;">[IMG 1]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">深入理解 WebGL 与 Three.js 性能优化</h3>
+                        <p class="blog-card__desc">探索如何在保持视觉效果的同时，优化 3D 场景的渲染性能...</p>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #252525;">[IMG 2]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">极简主义设计原则在 UI 中的应用</h3>
+                        <p class="blog-card__desc">少即是多。如何通过留白与排版创造高级感的用户界面...</p>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #2a2a2a;">[IMG 3]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">现代 CSS：CSS Grid 与 Flexbox 实战</h3>
+                        <p class="blog-card__desc">构建复杂响应式布局的最佳实践与技巧分享...</p>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #2a2a2a;">[IMG 4]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">如何构建高性能静态网站</h3>
+                        <p class="blog-card__desc">使用静态站点生成器提升加载速度和安全性...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner"><span>© <span id="year"></span> Your Name</span></div>
+    </footer>
+
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+    <script src="./config/constants.js"></script>
+    <script src="./config/settings.js"></script>
+    <script src="./js/utils/cursor.js"></script>
+    <script src="./js/utils/responsive.js"></script>
+    <script src="./js/utils/animations.js"></script>
+    <script src="./js/three-scene.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

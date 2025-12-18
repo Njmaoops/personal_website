@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>项目 · Personal Website</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/components/navigation.css" />
+    <link rel="stylesheet" href="./css/components/animations.css" />
+    <link rel="stylesheet" href="./css/components/cursor.css" />
+</head>
+
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="nav">
+        <a class="nav__brand" href="index.html">Portfolio</a>
+        <nav class="nav__links">
+            <a href="index.html" class="nav__link">首页</a>
+            <a href="about.html" class="nav__link">关于</a>
+            <a href="projects.html" class="nav__link is-active">项目</a>
+            <a href="resume.html" class="nav__link">经历</a>
+            <a href="blog.html" class="nav__link">博客</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container page-header">
+            <h1 class="page-title fade-in-up">Selected Project</h1>
+            <p class="page-desc fade-in-up" style="animation-delay: 0.1s">精选设计与开发案例，展示从概念到落地的全过程。</p>
+        </div>
+
+        <div class="container">
+            <div class="blog-grid fade-in-up" style="animation-delay: 0.2s">
+                <!-- Project 1 -->
+                <a href="javascript:void(0)" class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #202020;">[Project 1]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">E-Commerce Dashboard</h3>
+                        <p class="blog-card__desc">基于 React 与 D3.js 的数据可视化仪表盘，帮助商家实时分析销售数据与用户行为。</p>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="javascript:void(0)" class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #252525;">[Project 2]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">Travel App Interface</h3>
+                        <p class="blog-card__desc">极简风格的旅游预订应用 UI Kit，专注于移动端交互体验与流畅的动画过渡。</p>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="javascript:void(0)" class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder" style="background: #2a2a2a;">[Project 3]</div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">3D Portfolio Template</h3>
+                        <p class="blog-card__desc">利用 Three.js 构建的沉浸式个人作品集模板，支持自定义模型加载与光照调节。</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner"><span>© <span id="year"></span> Your Name</span></div>
+    </footer>
+
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+    <script src="./config/constants.js"></script>
+    <script src="./config/settings.js"></script>
+    <script src="./js/utils/cursor.js"></script>
+    <script src="./js/utils/responsive.js"></script>
+    <script src="./js/utils/animations.js"></script>
+    <script src="./js/three-scene.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -12,6 +12,28 @@
 	<link rel="stylesheet" href="./css/components/sections.css" />
 	<link rel="stylesheet" href="./css/components/animations.css" />
 	<link rel="stylesheet" href="./css/components/cursor.css" />
+	<style>
+		/* 首页特有样式覆盖 */
+		.section--hero {
+			/* 调整 Hero 高度以适应单屏，扣除 header 和 footer 高度 */
+			min-height: calc(100vh - 140px);
+			padding-bottom: 0;
+		}
+
+		/* 确保内容垂直居中 */
+		.section--hero .container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+		}
+
+		/* 调整按钮位置 */
+		.hero-btn {
+			margin-top: 32px;
+			align-self: flex-start;
+		}
+	</style>
 </head>
 
 <body>
@@ -20,71 +42,33 @@
 
 	<!-- 顶部导航 -->
 	<header class="nav" role="navigation" aria-label="主导航">
-		<a class="nav__brand" href="#hero" aria-label="回到顶部" tabindex="0">Portfolio</a>
+		<a class="nav__brand" href="index.html" aria-label="回到顶部" tabindex="0">Portfolio</a>
 		<nav class="nav__links" aria-label="页面分区">
-			<a href="#hero" class="nav__link is-active" data-section="hero" tabindex="0">首页</a>
-			<a href="#about" class="nav__link" data-section="about" tabindex="0">关于</a>
-			<a href="#projects" class="nav__link" data-section="projects" tabindex="0">项目</a>
-			<a href="#contact" class="nav__link" data-section="contact" tabindex="0">联系</a>
+			<a href="index.html" class="nav__link is-active" tabindex="0">首页</a>
+			<a href="about.html" class="nav__link" tabindex="0">关于</a>
+			<a href="projects.html" class="nav__link" tabindex="0">项目</a>
+			<a href="resume.html" class="nav__link" tabindex="0">经历</a>
+			<a href="blog.html" class="nav__link" tabindex="0">博客</a>
 		</nav>
 	</header>
 
-	<!-- 主内容：单页分区 -->
+	<!-- 主内容：单屏 Layout -->
 	<main id="main" class="main" role="main">
 		<section id="hero" class="section section--hero observe">
 			<div class="container">
-				<h1 class="title">你好，我是 <span class="title__accent">Your Name</span></h1>
-				<p class="subtitle">前端开发 / 极简设计 / Three.js 视觉表现</p>
-			</div>
-		</section>
+				<h1 class="title fade-in-up">你好，我是 <span class="title__accent">Your Name</span></h1>
+				<p class="subtitle fade-in-up" style="animation-delay: 0.1s">前端开发 / 极简设计 / Three.js 视觉表现</p>
 
-		<section id="about" class="section observe">
-			<div class="container">
-				<h2 class="section__title">关于我</h2>
-				<p class="section__text">
-					热爱简洁设计与可读性代码，擅长构建高质量前端体验。关注用户体验与可维护性。
-				</p>
+				<!-- 了解更多按钮 -->
+				<a href="about.html" class="btn hero-btn fade-in-up" style="animation-delay: 0.2s">了解更多</a>
 			</div>
 		</section>
-
-		<section id="projects" class="section observe">
-			<div class="container">
-				<h2 class="section__title">项目</h2>
-				<div class="grid">
-					<a class="card" href="javascript:void(0)" aria-label="项目 A" tabindex="0">
-						<div class="card__body">
-							<h3 class="card__title">项目 A</h3>
-							<p class="card__desc">简述你的亮点项目，强调作用与价值。</p>
-						</div>
-					</a>
-					<a class="card" href="javascript:void(0)" aria-label="项目 B" tabindex="0">
-						<div class="card__body">
-							<h3 class="card__title">项目 B</h3>
-							<p class="card__desc">简述你的亮点项目，强调作用与价值。</p>
-						</div>
-					</a>
-					<a class="card" href="javascript:void(0)" aria-label="项目 C" tabindex="0">
-						<div class="card__body">
-							<h3 class="card__title">项目 C</h3>
-							<p class="card__desc">简述你的亮点项目，强调作用与价值。</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="contact" class="section observe">
-			<div class="container">
-				<h2 class="section__title">联系</h2>
-				<p class="section__text">邮箱：you@example.com</p>
-			</div>
-		</section>
+		<!-- 其他 Section 已移除 -->
 	</main>
 
 	<footer class="footer" role="contentinfo">
 		<div class="container footer__inner">
 			<span>© <span id="year"></span> Your Name</span>
-			<a href="#hero" class="backtop" aria-label="回到顶部" tabindex="0">↑ 返回顶部</a>
 		</div>
 	</footer>
 

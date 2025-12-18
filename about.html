@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>关于我 · Personal Website</title>
+    <meta name="description" content="详细的自我介绍与生活点滴。" />
+    <link rel="preload" href="./assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/components/navigation.css" />
+    <link rel="stylesheet" href="./css/components/animations.css" />
+    <link rel="stylesheet" href="./css/components/cursor.css" />
+</head>
+
+<body>
+    <!-- Three.js 背景 -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- 导航 -->
+    <header class="nav" role="navigation">
+        <a class="nav__brand" href="index.html">Portfolio</a>
+        <nav class="nav__links">
+            <a href="index.html" class="nav__link">首页</a>
+            <a href="about.html" class="nav__link is-active">关于</a>
+            <a href="projects.html" class="nav__link">项目</a>
+            <a href="resume.html" class="nav__link">经历</a>
+            <a href="blog.html" class="nav__link">博客</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container page-header">
+            <h1 class="page-title fade-in-up">AI Trainer</h1>
+            <p class="page-desc fade-in-up" style="animation-delay: 0.1s">张浩翔 / AI 训练师 / 数据治理专家</p>
+        </div>
+
+        <div class="container layout-split fade-in-up" style="animation-delay: 0.2s">
+            <div class="split__content glass-card">
+                <h2>你好，我是张浩翔</h2>
+                <p class="section__text" style="color: #ccc; margin-bottom: 20px;">
+                    我是一名专注于 AI 大模型评测与数据治理的训练师。擅长将复杂的业务需求转化为可量化的数据标准，构建高质量的数据集以驱动模型迭代。
+                </p>
+                <p class="section__text" style="color: #ccc; margin-bottom: 20px;">
+                    在<b>壹网壹创</b>与<b>美团</b>的工作中，我积累了丰富的多模态模型 SFT 训练、RLHF 评测体系搭建及数据标注团队管理经验。我善于使用 Python
+                    脚本自动化处理数据，显著提升了标注与评测效率。
+                </p>
+                <p class="section__text" style="color: #ccc;">
+                    <b>核心能力：</b><br>
+                    • 大模型评测全流程 (GSB对比/Badcase归因)<br>
+                    • 复杂数据标注规则制定 (SOP)<br>
+                    • Label Studio 平台协同与脚本提效
+                </p>
+                <div style="margin-top: 30px; font-size: 14px; color: #888;">
+                    <span style="margin-right: 20px;">📧 haoxiangz109@gmail.com</span>
+                    <span>📍 132 9422 9532</span>
+                </div>
+            </div>
+            <div class="split__image">
+                <!-- 这里放生活大照 -->
+                <img src="./image/me.png" alt="张浩翔">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span>© <span id="year"></span> Your Name</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+    <script src="./config/constants.js"></script>
+    <script src="./config/settings.js"></script>
+    <script src="./js/utils/cursor.js"></script>
+    <script src="./js/utils/responsive.js"></script>
+    <script src="./js/utils/animations.js"></script>
+    <script src="./js/three-scene.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
