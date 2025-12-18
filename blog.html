@@ -29,51 +29,83 @@
         <div class="container page-header">
             <h1 class="page-title fade-in-up">Insight</h1>
             <p class="page-desc fade-in-up" style="animation-delay: 0.1s">思考、教程与技术笔记。</p>
+
+            <!-- 社交媒体按钮 -->
+            <div class="fade-in-up" style="animation-delay: 0.2s; margin-top: 24px; display: flex; gap: 16px;">
+                <a href="https://blog.csdn.net/m0_59565952?type=blog" target="_blank" class="btn btn--small">
+                    📑 CSDN 博客
+                </a>
+                <a href="https://www.xiaohongshu.com/user/profile/5c2b822c000000000502c664" target="_blank"
+                    class="btn btn--small"
+                    style="background: rgba(255, 40, 70, 0.15); border-color: rgba(255, 40, 70, 0.3);">
+                    📕 小红书
+                </a>
+            </div>
         </div>
 
         <div class="container">
-            <div class="blog-grid fade-in-up" style="animation-delay: 0.2s">
-                <!-- Article 1 -->
+            <div class="blog-grid fade-in-up" style="animation-delay: 0.3s">
+                <!-- Article 1: Transformer -->
                 <article class="blog-card glass-card">
                     <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #222;">[IMG 1]</div>
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Transformer</div>
                     </div>
                     <div class="blog-card__body">
-                        <h3 class="blog-card__title">深入理解 WebGL 与 Three.js 性能优化</h3>
-                        <p class="blog-card__desc">探索如何在保持视觉效果的同时，优化 3D 场景的渲染性能...</p>
+                        <h3 class="blog-card__title">Transformer 架构深度解析</h3>
+                        <p class="blog-card__desc">从 Attention Is All You Need 出发，剖析 Self-Attention 机制与 Encoder-Decoder
+                            结构，理解大模型的基石。</p>
                     </div>
                 </article>
 
-                <!-- Article 2 -->
+                <!-- Article 2: AI Hallucination -->
                 <article class="blog-card glass-card">
                     <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #252525;">[IMG 2]</div>
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); color: #333;">
+                            AI Hallucination</div>
                     </div>
                     <div class="blog-card__body">
-                        <h3 class="blog-card__title">极简主义设计原则在 UI 中的应用</h3>
-                        <p class="blog-card__desc">少即是多。如何通过留白与排版创造高级感的用户界面...</p>
+                        <h3 class="blog-card__title">AI 幻觉的成因与缓解策略</h3>
+                        <p class="blog-card__desc">为何模型会“一本正经胡说八道”？探讨数据偏差、解码策略对幻觉的影响，以及 RLHF 如何抑制幻觉。</p>
                     </div>
                 </article>
 
-                <!-- Article 3 -->
+                <!-- Article 3: CoT -->
                 <article class="blog-card glass-card">
                     <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #2a2a2a;">[IMG 3]</div>
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">CoT</div>
                     </div>
                     <div class="blog-card__body">
-                        <h3 class="blog-card__title">现代 CSS：CSS Grid 与 Flexbox 实战</h3>
-                        <p class="blog-card__desc">构建复杂响应式布局的最佳实践与技巧分享...</p>
+                        <h3 class="blog-card__title">CoT：思维链提示工程指南</h3>
+                        <p class="blog-card__desc">Chain-of-Thought 原理分析。如何通过“Let's think step by step”激发大模型的逻辑推理潜能。</p>
                     </div>
                 </article>
 
-                <!-- Article 4 -->
+                <!-- Article 4: RAG -->
                 <article class="blog-card glass-card">
                     <div class="blog-card__img">
-                        <div class="img-placeholder" style="background: #2a2a2a;">[IMG 4]</div>
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">RAG 技术</div>
                     </div>
                     <div class="blog-card__body">
-                        <h3 class="blog-card__title">如何构建高性能静态网站</h3>
-                        <p class="blog-card__desc">使用静态站点生成器提升加载速度和安全性...</p>
+                        <h3 class="blog-card__title">RAG 实战：外挂知识库增强生成</h3>
+                        <p class="blog-card__desc">检索增强生成 (Retrieval-Augmented Generation) 架构详解，解决 LLM 知识时效性与私有数据问答难题。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Article 5: SFT & RM -->
+                <article class="blog-card glass-card">
+                    <div class="blog-card__img">
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #333;">SFT & RM
+                        </div>
+                    </div>
+                    <div class="blog-card__body">
+                        <h3 class="blog-card__title">RLHF 核心：SFT 与 Reward Model</h3>
+                        <p class="blog-card__desc">从有监督微调 (SFT) 到奖励模型 (RM) 的训练细节，如何让模型对齐人类价值观与偏好。</p>
                     </div>
                 </article>
             </div>
