@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>个人网站 · 极简风格</title>
-	<meta name="description" content="极简风格个人网站，Three.js 背景，单页滚动布局，黑白配色。" />
+	<title>猫极南の个站</title>
+	<meta name="description" content="张浩翔，AI 训练师，花名猫极南。现于阿里巴巴从事偏好数据与 RLHF。" />
 	<link rel="preload" href="./assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
 	<link rel="stylesheet" href="./css/style.css" />
 	<link rel="stylesheet" href="./css/components/navigation.css" />
@@ -28,10 +28,12 @@
 			height: 100%;
 		}
 
-		/* 调整按钮位置 */
-		.hero-btn {
+		/* 首页两个按钮横排，窄屏自动换行 */
+		.hero-actions {
 			margin-top: 32px;
-			align-self: flex-start;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
 		}
 	</style>
 </head>
@@ -57,10 +59,14 @@
 		<section id="hero" class="section section--hero observe">
 			<div class="container">
 				<h1 class="title fade-in-up">你好，我是 <span class="title__accent">猫极南🐱</span></h1>
-				<p class="subtitle fade-in-up" style="animation-delay: 0.1s">一名 AI 训练师</p>
+				<!-- 首页简介与简历一致：现职是阿里巴巴的 AI 训练师 -->
+				<p class="subtitle fade-in-up" style="animation-delay: 0.1s">张浩翔 · AI 训练师</p>
+				<p class="subtitle fade-in-up" style="animation-delay: 0.15s">现于阿里巴巴 · 偏好数据 / RLHF</p>
 
-				<!-- 了解更多按钮 -->
-				<a href="about.html" class="btn hero-btn fade-in-up" style="animation-delay: 0.2s">了解更多</a>
+				<div class="hero-actions fade-in-up" style="animation-delay: 0.2s">
+					<a href="about.html" class="btn">了解更多</a>
+					<a href="resume.html" class="btn">工作经历</a>
+				</div>
 			</div>
 		</section>
 		<!-- 其他 Section 已移除 -->

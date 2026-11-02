@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>经历 · Personal Website</title>
+    <title>经历 · 猫极南</title>
+    <meta name="description" content="张浩翔，AI 训练师。阿里巴巴偏好数据与 RLHF，壹网壹创多模态数据，美团 Agent 对话数据。" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/components/navigation.css" />
     <link rel="stylesheet" href="./css/components/animations.css" />
@@ -26,84 +27,198 @@
     </header>
 
     <main class="main">
+        <!-- 页头：姓名、职位、联系方式和简历下载，都来自公开简历 -->
         <div class="container page-header">
-            <h1 class="page-title fade-in-up">Work Experience</h1>
-            <p class="page-desc fade-in-up" style="animation-delay: 0.1s">在多模态大模型训练与人机协同领域的深耕之路。</p>
-        </div>
-
-        <div class="container layout-dual">
-            <!-- Box 1: 壹网壹创 -->
-            <div class="dual-card glass-card fade-in-up" style="animation-delay: 0.2s">
-                <div class="dual-card__img">
-                    <div class="img-placeholder" style="background: linear-gradient(120deg, #2b32b2, #1488cc);">
-                        [多模态 AI 项目]
-                    </div>
-                </div>
-                <div class="dual-card__body">
-                    <h2 class="dual-card__title">杭州壹网壹创 · 多模态 AI 训练师</h2>
-                    <p class="section__text" style="font-size: 14px; margin-bottom: 10px; color: #888;">2024.10 - 至今</p>
-                    <p class="section__text">
-                        负责电商营销 VLM 及生图大模型的数据治理。主导标注规则 (SOP) 制定与迭代，协同算法团队搭建 Label Studio 平台。
-                    </p>
-                    <ul
-                        style="margin-top: 15px; color: #bdbdbd; font-size: 14px; padding-left: 18px; line-height: 1.6;">
-                        <li>构建 FAQ Query 分类体系，编写 Python 脚本实现标签自动化挂载，<b>效率提升 38%</b>。</li>
-                        <li>完成 5k+ 结构化标注及 3w+ 专项 SFT 训练数据交付。</li>
-                        <li>建立四维生图评测体系（画质/构图/美学/风格），推动良品率提升 10%。</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Box 2: 美团 -->
-            <div class="dual-card glass-card fade-in-up" style="animation-delay: 0.3s">
-                <div class="dual-card__img">
-                    <div class="img-placeholder" style="background: linear-gradient(120deg, #ffc500, #c28e00);">
-                        [智能助手 Agent]
-                    </div>
-                </div>
-                <div class="dual-card__body">
-                    <h2 class="dual-card__title">美团（武汉） · AI 训练师</h2>
-                    <p class="section__text" style="font-size: 14px; margin-bottom: 10px; color: #888;">2024.03 -
-                        2024.07</p>
-                    <p class="section__text">
-                        参与美团智能助手 Agent 模型优化，聚焦人机协同决策与多轮对话理解能力提升。
-                    </p>
-                    <ul
-                        style="margin-top: 15px; color: #bdbdbd; font-size: 14px; padding-left: 18px; line-height: 1.6;">
-                        <li>针对 Badcase 建立错误标签体系，细分理解偏差与实体识别错误，输出量化改进方向。</li>
-                        <li>SFT 数据构建：设计单轮任务、模糊意图等多样化对话模板，增强模型泛化能力。</li>
-                        <li>对用户意图（下单/催单等）进行精准语义标注与质量评分。</li>
-                    </ul>
-                </div>
+            <h1 class="page-title fade-in-up">张浩翔</h1>
+            <p class="page-desc fade-in-up" style="animation-delay: 0.1s">AI 训练师 · 猫极南の个站</p>
+            <p class="page-desc fade-in-up" style="animation-delay: 0.15s">
+                <a href="mailto:haoxiangz109@gmail.com">haoxiangz109@gmail.com</a>
+                ·
+                <a href="tel:13294229532" aria-label="电话 132 9422 9532">132 9422 9532</a>
+            </p>
+            <div class="page-actions fade-in-up" style="animation-delay: 0.2s">
+                <a class="btn btn--small" href="resume.pdf" download="resume.pdf" aria-label="下载简历 PDF">下载简历</a>
             </div>
         </div>
 
-        <!-- 新增：教育背景与技能 -->
-        <div class="container fade-in-up" style="animation-delay: 0.4s" style="margin-bottom: 80px;">
-            <div class="glass-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px;">
-                <div>
-                    <h3
-                        style="font-size: 24px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
-                        教育背景</h3>
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="font-size: 18px; color: #fff;">湖北经济学院</h4>
-                        <p style="color: #aaa; font-size: 14px;">物联网专业学士 | 绩点 3.82 | 2024.07 毕业</p>
+        <!-- 个人优势：五条标题和说明与简历原文一致 -->
+        <div class="container resume-block fade-in-up" style="animation-delay: 0.25s">
+            <h2 class="resume-block__title">个人优势</h2>
+            <div class="chip-row" style="margin-top: 0; margin-bottom: 16px;" aria-label="个人标签">
+                <span class="chip">AI训练师</span>
+                <span class="chip">RLHF 偏好数据</span>
+                <span class="chip">偏好与多模态数据</span>
+                <span class="chip">数据质量管理</span>
+                <span class="chip">自动化提效</span>
+                <span class="chip">Agent 评测</span>
+            </div>
+            <div class="glass-card">
+                <ul class="strength-list">
+                    <li>
+                        <span class="strength-list__label">规则与数据建设</span>
+                        <span class="strength-list__text">围绕训练目标制定标注规则与验收口径，覆盖偏好、多模态及 SFT 数据，形成维度、判例与争议处理规范。</span>
+                    </li>
+                    <li>
+                        <span class="strength-list__label">团队与交付管理</span>
+                        <span class="strength-list__text">对接算法与供应商标注团队，承接需求转化、人员配置、培训及质检，推动多批次数据交付。</span>
+                    </li>
+                    <li>
+                        <span class="strength-list__label">自动化与多模型协作</span>
+                        <span class="strength-list__text">结合 Python、HTML 与大模型预标，搭建多模态复核和数据统计工具，优化人机协作流程。</span>
+                    </li>
+                    <li>
+                        <span class="strength-list__label">多模型协同提效</span>
+                        <span class="strength-list__text">熟悉主流大模型的能力边界与适用场景，按任务特性进行模型分工，实现规则迭代与数据生产的多模型协同提效。</span>
+                    </li>
+                    <li>
+                        <span class="strength-list__label">模型评测与归因</span>
+                        <span class="strength-list__text">具备 Agent 真机横评与多轮对话评估经验，能从事实性、意图理解和任务完成度定位模型问题，为规则与数据优化提供依据。</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 工作经历：按时间从近到远，阿里巴巴在最上面 -->
+        <div class="container resume-block">
+            <h2 class="resume-block__title fade-in-up">工作经历</h2>
+            <div class="layout-resume">
+                <article class="glass-card job-card job-card--current fade-in-up" style="animation-delay: 0.1s">
+                    <div class="job-card__main">
+                        <span class="job-badge">至今</span>
+                        <div class="job-card__title-row">
+                            <h3 class="job-card__title">阿里巴巴 · AI 训练师</h3>
+                            <p class="job-card__date">2026.01 – 至今</p>
+                        </div>
+                        <p class="job-card__summary">负责大模型后训练偏好数据建设，围绕偏好规则标准化、数据质量和复核效率推进项目交付。</p>
                     </div>
-                    <ul style="color: #aaa; font-size: 14px; padding-left: 18px;">
-                        <li>中国“互联网+”大学生创新创业大赛金奖</li>
-                        <li>HCIA 华为云计算、大数据初级工程师</li>
-                        <li>英语 CET-4、普通话一乙</li>
-                    </ul>
+                    <div class="chip-row" aria-label="阿里巴巴工作关键词">
+                        <span class="chip">偏好数据</span>
+                        <span class="chip">RLHF</span>
+                        <span class="chip">标注规则</span>
+                        <span class="chip">质量管理</span>
+                    </div>
+
+                    <section class="job-block">
+                        <h4 class="job-block__title">项目：Live 多模态 RLHF 偏好数据建设<span class="job-block__date">2026.08 – 至今</span></h4>
+                        <p class="job-kicker">项目背景与目标</p>
+                        <p class="job-text">面向大模型实时语音 / 视频交互，建设用于后训练的 A/B 双模型偏好数据，统一偏好判断口径、降低训练数据噪声，解决复杂场景判定分歧和音视频复核成本高的问题。</p>
+                        <p class="job-kicker">工作职责</p>
+                        <ol class="job-list">
+                            <li><strong>评测口径设计</strong> 基于线上真实 query，以行业竞品为基线开展同 query 双模型偏好对比；针对两模型语音输入方式不同，确定统一判定依据，并以确定偏好导向，减少输入差异和“回答快但易幻觉”干扰偏好判断。</li>
+                            <li><strong>规则体系建设</strong> 完善合格判定、偏好比较与异常样本处置标准；定期收集争议与主观性 case 拉会对齐并更新规则文档，将复杂场景的判定边界沉淀为维度对照、判例与自检规范。</li>
+                            <li><strong>数据质量治理</strong> 通过了解模型架构转化成细化偏好规则，并组织数据复核，统一数据交付质量。</li>
+                            <li><strong>人机协作提效</strong> 采用“大模型预标—人工复核”流程，设计并落地音视频一体化复核工具，支持素材批量加载、有效语音定位与模型复核意见确认，降低人工核验成本。</li>
+                        </ol>
+                        <p class="job-kicker">项目成果</p>
+                        <ul class="job-list">
+                            <li><strong>数据交付：</strong>针对共情、问题解决、视觉三类专项制定标注策略，分批提前交付约 4.6 万条偏好数据，支撑上线模型的实时通话能力显著提升。</li>
+                            <li><strong>能效突破：</strong>通过自动化预标注与音视频一体化复核工具，平均单会话核验耗时由 5–10 分钟降至 3–5 分钟，人工核验成本降低约 45%，人均数据产出提升约 85%；回溯复核后等价标签（same）占比由约 30% 降至 10% 余。</li>
+                            <li><strong>方法沉淀：</strong>形成偏好规则与判例库，沉淀 44 个带标签与判定要点的历史案例，配套多模态复核工具，显著缩短标注团队上手周期，新人上手即合格率从 50% 提升至 80%。</li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="glass-card job-card fade-in-up" style="animation-delay: 0.2s">
+                    <div class="job-card__main">
+                        <div class="job-card__title-row">
+                            <h3 class="job-card__title">杭州壹网壹创科技股份有限公司 · 多模态 AI 训练师</h3>
+                            <!-- 结束日期是 2025.12，这里不能写成至今 -->
+                            <p class="job-card__date">2024.10 – 2025.12</p>
+                        </div>
+                        <p class="job-card__summary">负责电商营销场景的多模态训练数据建设与评测，推动标注标准、平台配置和数据生产流程优化。</p>
+                    </div>
+                    <div class="chip-row" aria-label="壹网壹创工作关键词">
+                        <span class="chip">多模态</span>
+                        <span class="chip">VLM</span>
+                        <span class="chip">SFT 数据</span>
+                        <span class="chip">Label Studio</span>
+                    </div>
+
+                    <section class="job-block">
+                        <h4 class="job-block__title">项目一：电商营销多模态训练数据建设</h4>
+                        <p class="job-kicker">项目背景与目标</p>
+                        <p class="job-text">围绕电商内容理解与生成需求，建立统一标注口径，改善素材流转效率，保障多模态训练数据交付。</p>
+                        <p class="job-kicker">工作职责</p>
+                        <ol class="job-list">
+                            <li><strong>规则与试标</strong> 将业务需求转化为 VLM 与生图标注规范，通过试标、争议归纳和培训持续校准标准。</li>
+                            <li><strong>平台与流程优化</strong> 协同算法完成 Label Studio 配置与素材接入，优化批量预览和标签流转；通过 Python 脚本支持自动标记与数据统计。</li>
+                            <li><strong>数据优化</strong> 围绕内容与业务需求的匹配度迭代 Prompt 模板，沉淀优质样本与 Badcase，反馈标注规则和数据生产。</li>
+                        </ol>
+                        <p class="job-kicker">项目成果</p>
+                        <ul class="job-list">
+                            <li><strong>数据交付：</strong>完成 5k+ 对话及 VLM 结构化标注数据、3 万+ 生图 SFT 训练数据。</li>
+                            <li><strong>规则与效率：</strong>标注 SOP 迭代 5+ 版，整体标注与分析周期缩短 38%。</li>
+                        </ul>
+                    </section>
+
+                    <section class="job-block">
+                        <h4 class="job-block__title">项目二：AI 智绘生图评测体系</h4>
+                        <p class="job-kicker">项目背景与目标</p>
+                        <p class="job-text">面向电商生图质量与业务适配，建立统一的评测标准和改进反馈机制。</p>
+                        <p class="job-kicker">工作职责</p>
+                        <ol class="job-list">
+                            <li><strong>评测标准设计</strong> 围绕画面质量、主体构图、视觉美学与风格一致性制定 0–3 分评分规则，将主观判断转化为可复核标准。</li>
+                            <li><strong>问题反馈与迭代</strong> 结合 Badcase 归因与评测统计反馈生成问题，协同算法迭代，并通过脚本辅助数据汇总与报告产出。</li>
+                        </ol>
+                        <p class="job-kicker">项目成果</p>
+                        <p class="job-text">良品率提升约 10%，评测报告生成效率提升约 20%。</p>
+                    </section>
+                </article>
+
+                <article class="glass-card job-card fade-in-up" style="animation-delay: 0.3s">
+                    <div class="job-card__main">
+                        <div class="job-card__title-row">
+                            <h3 class="job-card__title">美团（武汉） · AI 训练师</h3>
+                            <p class="job-card__date">2024.03 – 2024.07</p>
+                        </div>
+                        <p class="job-card__summary">参与智能助手的对话数据建设与质量评估，支持多轮理解和任务执行能力优化。</p>
+                    </div>
+                    <div class="chip-row" aria-label="美团工作关键词">
+                        <span class="chip">Agent</span>
+                        <span class="chip">多轮对话</span>
+                        <span class="chip">意图识别</span>
+                        <span class="chip">SFT 数据</span>
+                    </div>
+
+                    <section class="job-block">
+                        <p class="job-kicker">项目背景与目标</p>
+                        <p class="job-text">面向外卖、出行及到店等业务场景，通过对话精标与错误归因，为 SFT 和模型调优提供数据支持。</p>
+                        <p class="job-kicker">工作职责</p>
+                        <ol class="job-list">
+                            <li><strong>对话质量评估</strong> 围绕多轮意图与上下文关系开展标注评估，识别信息遗漏、逻辑不连贯和任务执行偏差。</li>
+                            <li><strong>错误归因与反馈</strong> 归纳意图追踪和用户约束理解的高频问题，将 Badcase 转化为数据修正与模型优化依据。</li>
+                            <li><strong>SFT 数据构建</strong> 整理优质对话并构建多样化任务样本，支持对话理解与任务执行能力优化。</li>
+                        </ol>
+                    </section>
+                </article>
+            </div>
+        </div>
+
+        <!-- 教育背景：两所学校、在校经历和证书 -->
+        <div class="container resume-block fade-in-up" style="animation-delay: 0.35s">
+            <h2 class="resume-block__title">教育背景</h2>
+            <div class="glass-card info-grid">
+                <div>
+                    <div class="edu-item">
+                        <h3>湖北经济学院</h3>
+                        <p>物联网专业学士（绩点3.82）</p>
+                        <p>2022.09 – 2024.07</p>
+                    </div>
+                    <div class="edu-item">
+                        <h3>武汉软件工程职业学院</h3>
+                        <p>大数据技术与应用</p>
+                        <p>2019.09 – 2022.06</p>
+                    </div>
                 </div>
                 <div>
-                    <h3
-                        style="font-size: 24px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
-                        专业优势</h3>
-                    <ul style="color: #aaa; font-size: 14px; padding-left: 18px; line-height: 1.8;">
-                        <li><b>大模型评测</b>：精通 GSB 对比与评分策略，擅长低质回复深度分析。</li>
-                        <li><b>工具栈</b>：熟练使用 Python (自动化脚本/爬虫)、Label Studio、Stable Studio、Cursor。</li>
-                        <li><b>项目管理</b>：具备需求承接、质检、规则迭代全流程能力，协调过 10 人标注团队。</li>
-                    </ul>
+                    <div class="edu-item">
+                        <h3>在校经历</h3>
+                        <p class="edu-note">中国“互联网+”大学生创新创业大赛金奖</p>
+                    </div>
+                    <div class="edu-item">
+                        <h3>证书</h3>
+                        <p class="edu-note">HCIA华为云计算、HCIA华为大数据初级工程师、英语CET-4、普通话一乙</p>
+                    </div>
                 </div>
             </div>
         </div>

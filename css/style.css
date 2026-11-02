@@ -353,6 +353,193 @@ h3 {
 	margin-bottom: 12px;
 }
 
+/* 经历页：三段工作纵向排列，给阿里巴巴的长项目留出空间 */
+.page-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 24px;
+}
+
+.resume-block {
+	margin-bottom: 56px;
+}
+
+.resume-block__title {
+	font-size: 24px;
+	font-weight: 300;
+	margin: 0 0 20px;
+}
+
+/* 个人优势：一条标签配一句简历原文 */
+.strength-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.strength-list__label {
+	color: #fff;
+	font-weight: 600;
+	margin-right: 8px;
+}
+
+.strength-list__text {
+	color: #bdbdbd;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+.layout-resume {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.job-card__main {
+	min-width: 0;
+}
+
+/* 公司和日期放在同一行；窄屏放不下时，日期换到标题下一行 */
+.job-card__title-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 8px 20px;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+}
+
+.job-card__title {
+	font-size: 22px;
+	margin: 0;
+}
+
+/* 当前工作略强调一点，仍然用同一套玻璃卡片 */
+.job-card--current {
+	border-color: rgba(255, 255, 255, 0.28);
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.job-card--current .job-card__title {
+	font-size: 26px;
+}
+
+.job-badge {
+	display: inline-block;
+	margin-bottom: 10px;
+	padding: 2px 8px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+}
+
+.job-card__date {
+	margin: 0;
+	color: #888;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.job-card__summary,
+.job-text {
+	margin: 0;
+	color: #ccc;
+	font-size: 15px;
+	line-height: 1.75;
+}
+
+.chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 14px;
+}
+
+.chip {
+	padding: 4px 10px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	background: rgba(255, 255, 255, 0.06);
+	color: #e8e8e8;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.job-block {
+	margin-top: 18px;
+	padding-top: 16px;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.job-block__title {
+	font-size: 16px;
+	color: #fff;
+	margin: 0 0 8px;
+}
+
+.job-block__date {
+	display: inline-block;
+	margin-left: 8px;
+	color: #888;
+	font-size: 13px;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+.job-kicker {
+	margin: 14px 0 6px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.job-list {
+	margin: 8px 0 0;
+	padding-left: 1.2em;
+	color: #bdbdbd;
+	font-size: 14px;
+	line-height: 1.75;
+}
+
+.job-list li + li {
+	margin-top: 8px;
+}
+
+.job-list strong {
+	color: #f5f5f5;
+	font-weight: 600;
+}
+
+/* 教育背景：左右两栏，小屏幕再改成上下排 */
+.info-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.edu-item + .edu-item {
+	margin-top: 20px;
+}
+
+.edu-item h3 {
+	font-size: 18px;
+	color: #fff;
+}
+
+.edu-item p,
+.edu-note {
+	margin: 4px 0 0;
+	color: #aaa;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
 /* 3. Blog Layout (三列网格) */
 .blog-grid {
 	display: grid;
@@ -410,6 +597,11 @@ h3 {
 
 	.layout-dual {
 		grid-template-columns: 1fr;
+	}
+
+	.info-grid {
+		grid-template-columns: 1fr;
+		gap: 28px;
 	}
 
 	.dual-card {
