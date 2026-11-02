@@ -20,13 +20,15 @@ window.CustomCursor = class {
     createCursor() {
         // 创建光标元素
         this.cursor = document.createElement('div');
-        this.cursor.className = 'cursor cursor__default';
+        // 鼠标还没动之前先藏起来，避免左上角空挂一个圆环
+        this.cursor.className = 'cursor cursor__default cursor--hidden';
         document.body.appendChild(this.cursor);
     }
 
     bindEvents() {
         // 鼠标移动事件
         document.addEventListener('mousemove', (e) => {
+            this.cursor.classList.remove('cursor--hidden');
             this.updateCursorPosition(e.clientX, e.clientY);
         });
 

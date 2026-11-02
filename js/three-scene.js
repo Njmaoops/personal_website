@@ -1,4 +1,5 @@
-// Three.js 背景：极简粒子场与缓慢相机运动
+// Three.js 背景：很少、很淡的灰粒子，慢慢转。
+// 故意做弱，避免盖过正文。颜色跟浅色页面靠近，不要用亮白大颗粒。
 (function () {
 	'use strict';
 
@@ -26,9 +27,10 @@
 
 	// 粒子云（简洁）
 	const particles = (() => {
-		const count = window.__SETTINGS__?.particles?.count ?? 600;
-		const size = window.__SETTINGS__?.particles?.size ?? 0.012;
-		const radius = 6.0;
+		// 数量和大小优先读 settings.js，这里的数字只是兜底
+		const count = window.__SETTINGS__?.particles?.count ?? 140;
+		const size = window.__SETTINGS__?.particles?.size ?? 0.006;
+		const radius = 7.5;
 		const geometry = new THREE.BufferGeometry();
 		const positions = new Float32Array(count * 3);
 		for (let i = 0; i < count; i++) {
@@ -39,11 +41,12 @@
 		}
 		geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 		const material = new THREE.PointsMaterial({
-			color: 0xffffff,
+			color: 0x9a9a9a,
 			size,
 			sizeAttenuation: true,
 			transparent: true,
-			opacity: 0.9
+			opacity: 0.28,
+			depthWrite: false
 		});
 		return new THREE.Points(geometry, material);
 	})();
@@ -56,13 +59,13 @@
 	let raf = 0;
 	const animate = () => {
 		const t = clock.getElapsedTime();
-		const rotSpeed = 0.04;
+		// 转得很慢，几乎是静止的灰点
+		const rotSpeed = 0.012;
 		particles.rotation.y = t * rotSpeed;
 
-		// 轻微相机摆动
-		const sway = 0.05;
-		camera.position.x = Math.sin(t * 0.3) * sway;
-		camera.position.y = Math.cos(t * 0.2) * sway;
+		const sway = 0.015;
+		camera.position.x = Math.sin(t * 0.15) * sway;
+		camera.position.y = Math.cos(t * 0.12) * sway;
 		camera.lookAt(0, 0, 0);
 
 		renderer.render(scene, camera);

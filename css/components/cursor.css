@@ -1,50 +1,48 @@
-/* 隐藏系统光标 */
-body {
-    cursor: none;
-}
+/* 自定义光标收成一个细圆环。
+   原来的图片箭头装饰感比较强，这里只用黑线，和黑白页面一致。
+   鼠标移到链接上，圆环会稍微变大。 */
 
-/* 为所有交互元素也隐藏系统光标 */
+body,
 a,
 button,
 input,
 textarea,
 select {
-    cursor: none;
+	cursor: none;
 }
 
-/* 自定义光标样式 */
 .cursor {
-    position: fixed;
-    width: 32px;
-    height: 32px;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, opacity 0.2s ease;
+	position: fixed;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #141414;
+	border-radius: 50%;
+	background: transparent;
+	pointer-events: none;
+	z-index: 9999;
+	transform: translate(-50%, -50%);
+	transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 
 .cursor__default {
-    background-image: url('../../image/cursor/pointer-arrow.png?v=2');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	background-image: none;
 }
 
 .cursor__hover {
-    background-image: url('../../image/cursor/pointer-hand.png?v=2');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	width: 28px;
+	height: 28px;
+	background: rgba(20, 20, 20, 0.05);
+	background-image: none;
 }
 
 .cursor__active {
-    background-image: url('../../image/cursor/pointer-active.png?v=2');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(-50%, -50%) scale(0.9);
+	width: 10px;
+	height: 10px;
+	background: #141414;
+	background-image: none;
+	transform: translate(-50%, -50%);
 }
 
 .cursor--hidden {
-    opacity: 0;
+	opacity: 0;
 }

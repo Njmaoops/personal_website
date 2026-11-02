@@ -1,5 +1,11 @@
-/* 基础入场动画 */
-.observe { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
-.observe.is-visible { opacity: 1; transform: translateY(0); }
+/* 内容进入画面时轻轻浮现，位移很小，避免抢注意力 */
+.observe {
+	opacity: 0;
+	transform: translateY(6px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
-
+.observe.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}

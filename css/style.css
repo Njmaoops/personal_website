@@ -1,14 +1,22 @@
-/* 全局样式与主题（黑白极简） */
-/* 字体与基础变量 */
+/* 黑白简约主题
+   整站只用接近黑、白、灰的颜色。
+   字重偏轻，留白加大，去掉玻璃、阴影和彩色装饰。
+   正文颜色、日期、数字都不要在这里改，那些写在 HTML 里。 */
 :root {
-	--bg: #0e0e0e;
-	--fg: #f5f5f5;
-	--muted: #bdbdbd;
-	--line: #1c1c1c;
-	--accent: #ffffff;
-	--card: #141414;
-	--card-line: #1e1e1e;
-	--max-w: 1120px;
+	--bg: #f7f7f7;
+	--fg: #141414;
+	--muted: #5e5e5e;
+	--line: #e2e2e2;
+	--accent: #141414;
+	--card: #ffffff;
+	--card-line: #e2e2e2;
+	--max-w: 980px;
+}
+
+/* 让滚动条和表单也走浅色，避免系统暗色控件跳出来 */
+html {
+	color-scheme: light;
+	background: var(--bg);
 }
 
 /* CSS Reset（极简） */
@@ -25,13 +33,16 @@ body {
 	margin: 0;
 	background: var(--bg);
 	color: var(--fg);
-	font-family: ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	line-height: 1.6;
+	/* 系统字体即可。标题不再用粗体，看起来更轻。 */
+	font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-weight: 400;
+	line-height: 1.75;
+	letter-spacing: 0.01em;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* 背景画布置底 */
+/* 背景粒子画布：放在内容下面，而且不挡住点击 */
 #bg-canvas {
 	position: fixed;
 	inset: 0;
@@ -39,9 +50,11 @@ body {
 	height: 100%;
 	z-index: 0;
 	display: block;
+	pointer-events: none;
+	opacity: 0.55;
 }
 
-/* 容器与布局 */
+/* 容器与布局：内容列收窄一点，两边自然留白 */
 .main {
 	position: relative;
 	z-index: 1;
@@ -51,7 +64,7 @@ body {
 	width: 100%;
 	max-width: var(--max-w);
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 40px;
 }
 
 /* 基础元素 */
@@ -67,18 +80,43 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	margin: 0;
-	font-weight: 600;
+	font-weight: 400;
+	letter-spacing: -0.02em;
+	line-height: 1.35;
 }
 
-/* 页脚 */
+/* 强调字只比正文略重，不再用很粗的黑体 */
+b,
+strong {
+	font-weight: 500;
+	color: var(--fg);
+}
+
+::selection {
+	background: #141414;
+	color: #f7f7f7;
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 1px solid #141414;
+	outline-offset: 3px;
+}
+
+/* 页脚：一条细线，没有渐变 */
 .footer {
 	border-top: 1px solid var(--line);
-	padding: 24px 0;
-	background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02) 100%);
+	padding: 36px 0 48px;
+	margin-top: 40px;
+	background: transparent;
 	position: relative;
 	z-index: 1;
+	color: var(--muted);
+	font-size: 13px;
+	letter-spacing: 0.04em;
 }
 
 .footer__inner {
@@ -89,63 +127,71 @@ h3 {
 }
 
 .backtop {
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 .backtop:hover {
 	opacity: 1;
 	text-decoration: underline;
+	text-underline-offset: 3px;
 }
 
-/* 英雄区 */
+/* 英雄区：字大、周围空 */
 .section--hero {
 	min-height: 88vh;
 	display: grid;
 	align-items: center;
+	padding-top: 24px;
+	padding-bottom: 48px;
 }
 
 .title {
-	font-size: clamp(28px, 6vw, 56px);
-	line-height: 1.2;
-	letter-spacing: 0.2px;
+	font-size: clamp(36px, 6.4vw, 64px);
+	font-weight: 400;
+	line-height: 1.25;
+	letter-spacing: -0.03em;
 }
 
 .title__accent {
 	color: var(--accent);
+	font-weight: 400;
 }
 
 .subtitle {
-	font-size: clamp(14px, 2.6vw, 18px);
-	margin-top: 8px;
+	font-size: clamp(15px, 2vw, 17px);
+	font-weight: 400;
+	margin-top: 10px;
+	max-width: 36em;
 }
 
-/* 卡片与网格 */
+/* 卡片与网格：白底细边，悬停不再上浮 */
 .grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 16px;
+	gap: 28px;
 }
 
 .card {
 	display: block;
 	border: 1px solid var(--card-line);
 	background: var(--card);
-	border-radius: 10px;
-	transition: transform .25s ease, border-color .25s ease, background .25s ease;
+	border-radius: 0;
+	transition: border-color 0.2s ease;
 }
 
 .card:hover {
-	transform: translateY(-2px);
-	border-color: #2a2a2a;
+	transform: none;
+	border-color: #141414;
 }
 
 .card__body {
-	padding: 16px;
+	padding: 24px;
 }
 
 .card__title {
 	font-size: 18px;
-	margin-bottom: 4px;
+	margin-bottom: 8px;
+	font-weight: 400;
 }
 
 .card__desc {
@@ -161,6 +207,10 @@ h3 {
 }
 
 @media (max-width: 640px) {
+	.container {
+		padding: 0 20px;
+	}
+
 	.grid {
 		grid-template-columns: 1fr;
 	}
@@ -169,179 +219,219 @@ h3 {
 		flex-direction: column;
 		align-items: flex-start;
 	}
+
 }
 
 /* === 多页面扩展样式 === */
 
-/* 通用组件 */
-/* --- Universal Button (Apple Style) --- */
+/* 按钮：线框，不用胶囊和玻璃阴影 */
 .btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 12px 32px;
-	border-radius: 999px;
-	/* Pill shape */
-	background: rgba(255, 255, 255, 0.1);
-	/* Subtle glass */
-	color: #fff;
+	padding: 10px 22px;
+	border-radius: 0;
+	background: transparent;
+	color: var(--fg);
 	text-decoration: none;
-	font-weight: 500;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(12px);
-	transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-	/* Smooth spring-like */
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	letter-spacing: 0.5px;
+	font-weight: 400;
+	font-size: 14px;
+	border: 1px solid #141414;
+	backdrop-filter: none;
+	transition: background 0.2s ease, color 0.2s ease;
+	box-shadow: none;
+	letter-spacing: 0.04em;
 	cursor: none;
 }
 
 .btn:hover {
-	background: rgba(255, 255, 255, 0.25);
-	transform: translateY(-2px) scale(1.02);
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-	border-color: rgba(255, 255, 255, 0.5);
+	background: #141414;
+	color: #f7f7f7;
+	transform: none;
+	box-shadow: none;
+	border-color: #141414;
 }
 
 .btn--small {
-	padding: 10px 24px;
-	font-size: 14px;
+	padding: 8px 16px;
+	font-size: 13px;
 	gap: 8px;
-	background: rgba(255, 255, 255, 0.08);
+	background: transparent;
 }
 
-/* 页面标题区 */
+/* 页面标题区：标题和正文之间多留一点气口 */
 .page-header {
-	padding-top: 140px;
-	padding-bottom: 60px;
+	padding-top: 96px;
+	padding-bottom: 56px;
 }
 
 .page-title {
-	font-size: clamp(32px, 5vw, 48px);
+	font-size: clamp(34px, 5vw, 52px);
 	margin-bottom: 16px;
-	font-weight: 300;
+	font-weight: 400;
+	letter-spacing: -0.03em;
 }
 
 .page-desc {
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: 400;
 	color: var(--muted);
-	max-width: 600px;
+	max-width: 40em;
+	line-height: 1.7;
 }
 
-/* 玻璃拟态卡片 */
+.page-desc a {
+	color: var(--fg);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-thickness: 1px;
+}
+
+/* 内容卡片：实心白底 + 1px 细线，不再模糊背景 */
 .glass-card {
-	background: rgba(20, 20, 20, 0.6);
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-	border-radius: 12px;
-	padding: 32px;
-	transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
+	background: var(--card);
+	border: 1px solid var(--card-line);
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	border-radius: 0;
+	padding: 40px 36px;
+	box-shadow: none;
+	transition: border-color 0.2s ease;
 }
 
 .glass-card:hover {
-	border-color: rgba(255, 255, 255, 0.2);
-	transform: translateY(-4px);
+	border-color: var(--card-line);
+	transform: none;
 }
 
-/* 占位图通用样式 */
+/* 只有可点击的卡片，悬停时边框加深 */
+a.glass-card:hover,
+a.card:hover {
+	border-color: #141414;
+}
+
+/* 博客封面占位：统一浅灰，盖掉原来的彩色渐变 */
 .img-placeholder {
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+	background: #f3f3f3 !important;
+	color: #8a8a8a !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #333;
-	font-size: 24px;
-	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 0.14em;
+	border-radius: 0;
 	overflow: hidden;
 	position: relative;
+	text-transform: uppercase;
 }
 
 .img-placeholder::after {
-	content: 'Image Placeholder';
-	font-size: 12px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	opacity: 0.3;
+	content: none;
 }
 
 /* === 布局系统 === */
 
-/* 1. About Layout (左右分栏，等高对齐) */
+/* 关于页：左文右图，中间留出较宽的空隙 */
 .layout-split {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 60px;
+	grid-template-columns: 1.05fr 0.95fr;
+	gap: 48px;
 	align-items: stretch;
-	/* 关键：让左右子元素高度自动拉伸一致 */
-	min-height: 60vh;
+	min-height: 0;
+	padding-bottom: 72px;
 }
 
 .split__image {
 	width: 100%;
 	height: 100%;
-	/* 跟随父容器高度 */
-	min-height: 500px;
-	/* 保证最小高度，避免文字太少时图片太矮 */
-	border-radius: 12px;
+	min-height: 460px;
+	border-radius: 0;
 	overflow: hidden;
 	position: relative;
+	background: #eeeeee;
+	border: 1px solid var(--line);
 }
 
 .split__image img {
 	position: absolute;
-	/* 绝对定位充满容器 */
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	/* 裁剪填充 */
 }
 
 .split__content {
-	padding: 40px;
+	padding: 40px 36px;
 	height: 100%;
-	/* 确保卡片撑满高度 */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/* 内容垂直居中 */
 }
 
 .split__content h2 {
-	font-size: 32px;
-	margin-bottom: 24px;
-	color: var(--accent);
+	font-size: 28px;
+	margin-bottom: 8px;
+	color: var(--fg);
+	font-weight: 400;
 }
 
-/* 2. Resume Layout (双大卡片) */
+.split__content h3 {
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--muted);
+	margin-bottom: 28px;
+	letter-spacing: 0;
+}
+
+/* 关于页正文：段落之间固定间距，颜色跟主题走 */
+.about-copy {
+	margin: 0 0 18px;
+	color: var(--muted);
+	line-height: 1.85;
+}
+
+.about-copy:last-of-type {
+	margin-bottom: 0;
+}
+
+/* 项目页两张大卡片 */
 .layout-dual {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 40px;
+	gap: 28px;
 	margin-bottom: 80px;
 }
 
 .dual-card {
 	display: flex;
 	flex-direction: column;
-	height: 600px;
-	/* 大尺寸 */
+	height: 520px;
 	padding: 0;
 	overflow: hidden;
 }
 
 .dual-card__img {
-	height: 60%;
+	height: 68%;
 	width: 100%;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	border-bottom: 1px solid var(--line);
+	background: #f3f3f3;
+	overflow: hidden;
+}
+
+.dual-card__img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	display: block;
 }
 
 .dual-card__body {
-	padding: 32px;
+	padding: 24px 24px 28px;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -349,48 +439,60 @@ h3 {
 }
 
 .dual-card__title {
-	font-size: 24px;
-	margin-bottom: 12px;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 8px;
 }
 
-/* 经历页：三段工作纵向排列，给阿里巴巴的长项目留出空间 */
+.dual-card__hint {
+	margin: 0;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+/* 经历页 */
 .page-actions {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 12px;
-	margin-top: 24px;
+	margin-top: 28px;
 }
 
 .resume-block {
-	margin-bottom: 56px;
+	margin-bottom: 72px;
 }
 
 .resume-block__title {
-	font-size: 24px;
-	font-weight: 300;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 0.16em;
+	color: var(--muted);
 	margin: 0 0 20px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--line);
 }
 
-/* 个人优势：一条标签配一句简历原文 */
 .strength-list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 22px;
 }
 
 .strength-list__label {
-	color: #fff;
-	font-weight: 600;
-	margin-right: 8px;
+	display: block;
+	color: var(--fg);
+	font-weight: 500;
+	margin: 0 0 4px;
+	letter-spacing: 0;
 }
 
 .strength-list__text {
-	color: #bdbdbd;
+	color: var(--muted);
 	font-size: 14px;
-	line-height: 1.7;
+	line-height: 1.8;
 }
 
 .layout-resume {
@@ -403,149 +505,159 @@ h3 {
 	min-width: 0;
 }
 
-/* 公司和日期放在同一行；窄屏放不下时，日期换到标题下一行 */
 .job-card__title-row {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	gap: 8px 20px;
+	gap: 8px 24px;
 	flex-wrap: wrap;
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 }
 
 .job-card__title {
 	font-size: 22px;
+	font-weight: 400;
 	margin: 0;
+	letter-spacing: -0.02em;
 }
 
-/* 当前工作略强调一点，仍然用同一套玻璃卡片 */
+/* 当前工作只用一条左边线标出，不用发光阴影 */
 .job-card--current {
-	border-color: rgba(255, 255, 255, 0.28);
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+	border-color: #141414;
+	border-left-width: 2px;
+	box-shadow: none;
 }
 
 .job-card--current .job-card__title {
-	font-size: 26px;
+	font-size: 24px;
 }
 
 .job-badge {
 	display: inline-block;
-	margin-bottom: 10px;
-	padding: 2px 8px;
-	border-radius: 999px;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	color: #fff;
+	margin-bottom: 14px;
+	padding: 0;
+	border-radius: 0;
+	border: none;
+	color: var(--muted);
 	font-size: 12px;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.14em;
 }
 
 .job-card__date {
 	margin: 0;
-	color: #888;
-	font-size: 14px;
+	color: var(--muted);
+	font-size: 13px;
+	letter-spacing: 0.04em;
 	white-space: nowrap;
 }
 
 .job-card__summary,
 .job-text {
 	margin: 0;
-	color: #ccc;
+	color: var(--muted);
 	font-size: 15px;
-	line-height: 1.75;
+	line-height: 1.8;
 }
 
 .chip-row {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	margin-top: 14px;
+	margin-top: 16px;
 }
 
+/* 标签改成小细框，不再是半透明胶囊 */
 .chip {
-	padding: 4px 10px;
-	border-radius: 999px;
-	border: 1px solid rgba(255, 255, 255, 0.14);
-	background: rgba(255, 255, 255, 0.06);
-	color: #e8e8e8;
+	padding: 2px 8px;
+	border-radius: 0;
+	border: 1px solid #d5d5d5;
+	background: transparent;
+	color: #3a3a3a;
 	font-size: 12px;
-	line-height: 1.4;
+	line-height: 1.6;
+	letter-spacing: 0.02em;
 }
 
 .job-block {
-	margin-top: 18px;
-	padding-top: 16px;
-	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	margin-top: 22px;
+	padding-top: 18px;
+	border-top: 1px solid var(--line);
 }
 
 .job-block__title {
 	font-size: 16px;
-	color: #fff;
+	font-weight: 400;
+	color: var(--fg);
 	margin: 0 0 8px;
+	letter-spacing: 0;
+	line-height: 1.55;
 }
 
 .job-block__date {
 	display: inline-block;
-	margin-left: 8px;
-	color: #888;
+	margin-left: 10px;
+	color: var(--muted);
 	font-size: 13px;
 	font-weight: 400;
 	white-space: nowrap;
 }
 
 .job-kicker {
-	margin: 14px 0 6px;
-	color: #fff;
-	font-size: 14px;
-	font-weight: 600;
+	margin: 16px 0 6px;
+	color: var(--fg);
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.08em;
 }
 
 .job-list {
 	margin: 8px 0 0;
-	padding-left: 1.2em;
-	color: #bdbdbd;
+	padding-left: 1.15em;
+	color: var(--muted);
 	font-size: 14px;
-	line-height: 1.75;
+	line-height: 1.8;
 }
 
 .job-list li + li {
-	margin-top: 8px;
+	margin-top: 10px;
 }
 
 .job-list strong {
-	color: #f5f5f5;
-	font-weight: 600;
+	color: var(--fg);
+	font-weight: 500;
 }
 
-/* 教育背景：左右两栏，小屏幕再改成上下排 */
+/* 教育背景 */
 .info-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 40px;
+	gap: 36px 48px;
 }
 
 .edu-item + .edu-item {
-	margin-top: 20px;
+	margin-top: 24px;
 }
 
 .edu-item h3 {
 	font-size: 18px;
-	color: #fff;
+	font-weight: 400;
+	color: var(--fg);
 }
 
 .edu-item p,
 .edu-note {
 	margin: 4px 0 0;
-	color: #aaa;
+	color: var(--muted);
 	font-size: 14px;
-	line-height: 1.7;
+	line-height: 1.75;
 }
 
-/* 3. Blog Layout (三列网格) */
+/* 博客三列 */
 .blog-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 30px;
-	margin-bottom: 80px;
+	gap: 24px;
+	margin-bottom: 72px;
 }
 
 .blog-card {
@@ -556,44 +668,59 @@ h3 {
 }
 
 .blog-card__img {
-	height: 200px;
-	/* 长方形 */
+	height: 148px;
 	width: 100%;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	border-bottom: 1px solid var(--line);
+	background: #f3f3f3;
 }
 
 .blog-card__body {
-	padding: 24px;
+	padding: 22px 22px 26px;
 }
 
 .blog-card__title {
-	font-size: 18px;
+	font-size: 17px;
+	font-weight: 400;
 	margin-bottom: 10px;
-	line-height: 1.4;
+	line-height: 1.45;
+	letter-spacing: 0;
 }
 
 .blog-card__desc {
 	font-size: 14px;
-	line-height: 1.6;
+	line-height: 1.7;
+	color: var(--muted);
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
 
+/* 项目详情里的长图：去掉圆角，贴着细线卡片 */
+.project-figure {
+	padding: 0;
+	overflow: hidden;
+}
+
+.project-figure img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 0;
+}
+
 /* 响应式调整 */
 @media (max-width: 900px) {
 	.layout-split {
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 28px;
 	}
 
 	.split__image {
-		height: 300px;
+		height: 360px;
+		min-height: 0;
 		order: -1;
 	}
-
-	/* 图片在移动端置顶 */
 
 	.layout-dual {
 		grid-template-columns: 1fr;
@@ -606,16 +733,48 @@ h3 {
 
 	.dual-card {
 		height: auto;
-		min-height: 400px;
+		min-height: 0;
+	}
+
+	.dual-card__img {
+		height: 240px;
 	}
 
 	.blog-grid {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.page-header {
+		padding-top: 64px;
+		padding-bottom: 36px;
+	}
+
+	.glass-card,
+	.split__content {
+		padding: 28px 22px;
 	}
 }
 
 @media (max-width: 600px) {
 	.blog-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.page-title {
+		font-size: 32px;
+	}
+
+	.job-card__title,
+	.job-card--current .job-card__title {
+		font-size: 20px;
+	}
+
+	.job-card__date,
+	.job-block__date {
+		white-space: normal;
+	}
+
+	.resume-block {
+		margin-bottom: 48px;
 	}
 }

@@ -1,44 +1,77 @@
-/* 顶部导航（黑白极简） */
+/* 顶部导航：白底细线，当前页只用下划线，不用实心白块 */
 .nav {
 	position: sticky;
 	top: 0;
 	z-index: 2;
-	backdrop-filter: saturate(140%) blur(8px);
-	background: rgba(14,14,14,0.6);
-	border-bottom: 1px solid rgba(255,255,255,0.06);
+	backdrop-filter: blur(10px);
+	background: rgba(247, 247, 247, 0.9);
+	border-bottom: 1px solid var(--line, #e2e2e2);
 }
+
 .nav,
 .nav__links {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 12px;
+	gap: 16px;
 }
-.nav { padding: 12px 20px; }
-.nav__brand { font-weight: 600; letter-spacing: 0.3px; }
-.nav__links { gap: 8px; }
+
+.nav {
+	padding: 18px 32px;
+}
+
+.nav__brand {
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: var(--fg, #141414);
+}
+
+.nav__links {
+	gap: 4px;
+}
+
 .nav__link {
 	padding: 8px 10px;
-	border-radius: 8px;
-	color: #cfcfcf;
+	border-radius: 0;
+	color: #6a6a6a;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.04em;
 	border: 1px solid transparent;
-	transition: color .2s ease, background .2s ease, border-color .2s ease;
+	transition: color 0.2s ease;
 }
+
 .nav__link:hover {
-	color: #fff;
-	background: rgba(255,255,255,0.04);
-	border-color: rgba(255,255,255,0.06);
+	color: #141414;
+	background: transparent;
+	border-color: transparent;
 }
+
 .nav__link.is-active {
-	color: #111;
-	background: #fff;
-	border-color: #fff;
+	color: #141414;
+	background: transparent;
+	border-color: transparent;
+	text-decoration: underline;
+	text-underline-offset: 6px;
+	text-decoration-thickness: 1px;
 }
 
 @media (max-width: 640px) {
-	.nav { padding: 10px 16px; }
-	.nav__links { gap: 4px; }
-	.nav__link { padding: 6px 8px; }
+	.nav {
+		padding: 14px 16px;
+		flex-wrap: wrap;
+		row-gap: 4px;
+	}
+
+	.nav__links {
+		gap: 0;
+		flex-wrap: wrap;
+	}
+
+	.nav__link {
+		padding: 6px 8px;
+		font-size: 13px;
+	}
 }
-
-

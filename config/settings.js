@@ -1,8 +1,8 @@
-// 全局设置（Three.js 等）
+// 背景粒子的数量和大小。数字越小，越不打扰正文。
 window.__SETTINGS__ = {
 	particles: {
-		count: 700,
-		size: 0.012
+		count: 140,
+		size: 0.006
 	}
 };
 
